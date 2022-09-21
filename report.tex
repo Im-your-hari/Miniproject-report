@@ -1,0 +1,115 @@
+\label{key}
+\documentclass[12pt,a4paper]{report}
+\usepackage[pdftex]{graphicx} %for embedding images
+\usepackage{url} %for proper url entries
+%\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={<pdf title here>}, pdfauthor={<author's name here>}, pdfsubject={<subject here>}, pdfkeywords={<keywords here>}]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
+%\usepackage[final]{pdfpages} %for embedding another pdf, remove if not required
+\usepackage[pdftex]{graphicx}
+%\usepackage[latin1,English]{}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{fixltx2e}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage{ragged2e}
+\usepackage{subcaption}
+%\usepackage[list=true,listformat=simple]{subcaption}
+\usepackage{appendix}
+\usepackage[left=1.5in,right=1in,bottom=1in]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\normalsize
+%\lhead{}
+%\chead{}
+%\lfoot{\textit{Dept. of Computer Science \& Engineering, CEK}}
+\cfoot{\thepage}
+%\rfoot{\thepage}
+%\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\usepackage{sectsty}
+\usepackage{lipsum}
+\usepackage{titletoc}
+\usepackage{tocloft}
+\renewcommand\cftchappresnum{Chapter}
+\cftsetindents{chapter}{0em}{5.5em}
+\cftsetindents{section}{5.5em}{2.5em}
+\cftsetindents{subsection}{8.5em}{3.5em}
+\renewcommand{\cftdot}{}
+%\titlecontents*{chapter}
+%[0pt]% <left>
+
+\chapterfont{\centering}
+\usepackage{amsmath}
+
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{pifont}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm , text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\begin{document}
+\renewcommand\bibname{REFERENCES} %Renames "Bibliography" to "References" on ref page
+\renewcommand{\listfigurename}{\centerline{LIST OF FIGURES}}
+\renewcommand{\listtablename}{\centerline{LIST OF TABLES}}
+\renewcommand{\contentsname}{\centerline{CONTENTS}}
+\clearpage
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+%include other pages
+\input{./title.tex}
+\input{./declaration.tex}
+\input{./certificate.tex}
+\onehalfspacing
+\addtocontents{toc}{\textbf{Contents}\hspace{3cm}\hspace{8.4cm}\textbf{Page No}\par}
+\newpage
+\tableofcontents
+\newpage
+\addcontentsline{toc}{chapter}{ACKNOWLEDGEMENT}
+\clearpage
+\pagenumbering{roman} %numbering before main content starts
+\input{./acknowldgement.tex}
+\newpage
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\input{./abstract.tex}
+\newpage
+\renewcommand{\cftfigfont}{}
+\addcontentsline{toc}{chapter}{LIST OF TABLES}
+%\addtocontents{lot}{\textbf{\hspace{.5cm}No.}\hspace{3.3cm}\textbf{Title}\hfill\textbf{Page No.}\par}
+\listoftables
+\newpage
+\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+\newpage
+\addtocontents{lot}{\textbf{\hspace{.5cm}No.}\hspace{3cm}\textbf{Title}\hfill\textbf{Page No.}\par}
+\listoffigures
+\cleardoublepage
+\pagenumbering{arabic} %reset numbering to normal for the main content
+\newpage
+\renewcommand{\cftfigfont}{}
+\newpage
+\addcontentsline{toc}{chapter}{ABBREVIATIONS}
+\newpage
+
+\input{./abbreviation.tex}
+\cleardoublepage
+\pagenumbering{arabic}
+\input{./introduction.tex}
+%\input{./objective.tex}
+\input{./literature-survey1.tex}
+\input{./proposed-system.tex}
+\input{./implementation.tex}
+\input{./resultsanddiscussion.tex}
+\input{./conclusionandfuturework.tex}
+\input{./ref.tex}
+
+
+%\cite{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}
+%\bibliography{r.bib}
+%\bibliographystyle{IEEEtran}
+\end{document}

@@ -1,0 +1,27 @@
+
+
+\chapter{EXISTING SYSTEM}
+The framework for news web video event mining consists of four stages: data preprocessing, textual information similarity measure, visual information similarity measure, and hybrid probabilistic model for integration. After getting the correlation between terms and events through visual neighbor information, MCA is used to calculate the similarity between each NDK and event through textual distribution information in NDKs. For the visual information, NDK-within video information and visual near-duplicate feature trajectory are fused to improve the robustness and accuracy of the visual features. Finally, the content-based visual temporal information and textual distribution information are integrated through the proposed probabilistic model. The input of our framework is the news web videos returned from a user query. After NDK detection and grouping, a series of NDKs and their corresponding terms can be obtained. As a result, the similarity between each NDK and each event is calculated, and every NDK is assigned to the event with the largest similarity. The output is the classiﬁed events.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{figure2}
+	\caption{Existing framework for news web video event mining.}
+	\label{fig:Existing framework for news web video event mining}
+\end{figure}
+
+
+
+\section{DATA PREPROCESSING}
+After shot boundary detection, the middle frame in each video shot is extracted as the keyframe for the shot. Each video can be represented by a series of keyframes. Then, NDK detection method is utilized to detect the NDKs among videos. Local points are detected with Harris–Laplace and described by SIFT.\\
+
+Terms extracted from titles and tags are treated as textual features. Because of the noisy user-supplied tag information, text words are pruned using methods, including word stemming and special character removal. Finally, all features and the event labels are combined to form an indicator matrix with instances (i.e., NDKs) as rows and the categories of variables (i.e., terms) and event labels as columns.
+ 
+ \section{TEXTUAL INFORMATION SIMILARITY MEASURE}
+ Feature selection and visual neighbour information are used to enhance the weights of the representative terms. The less important terms are neglected. MCA is then applied to calculate the MCA-based transaction weights, targeted to bridge the gap between an NDK and terms. In order to apply MCA, each feature in the training data set is discretized into several partitions (i.e.,feature-value pairs), and the same partition ranges are used to discretize the testing data set. As a result, the similarity between each feature-value pair and an event is calculated. Finally, the weights between each NDK and all events are calculated by summing the weights of the feature-value pairs along all features.
+ 
+  \section{VISUAL INFORMATION SIMILARITY MEASURE}
+  NDK-within-video information is ﬁrst used to measure the similarities among NDKs. Second, the visual feature trajectories induced from NDKs are used to ﬁnd the highly relevant NDKs as the time distribution feature. Because of the complementary characteristics of the NDK-within-video information and the time distribution information, both are utilized to measure the similarity between an NDK and an event.
+  
+ \section{HYBRID PROBABILISTIC MODEL FOR INTEGRATION}
+ A hybrid probabilistic model is proposed for better video event mining, which integrates the visual and textual information. Ultimately, every NDK is grouped to the event with the largest similarity value.
