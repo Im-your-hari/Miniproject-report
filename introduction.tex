@@ -4,26 +4,37 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[LE,RO]{\textit{\footnotesize \thepage}}
-\fancyhead[RE,LO]{\textit{\footnotesize IoT Based Smart Bin for Clean Environment}}
+\fancyhead[RE,LO]{\textit{\footnotesize RFID Based Surveillance System for School Bus}}
 %\fancyfoot[LE,LO]{\textit{\footnotesize Department of CSE}}
 \fancyfoot[LE,RO]{\textit{\footnotesize Department of CSE}}
  
 \renewcommand{\headrulewidth}{2pt}
 \renewcommand{\footrulewidth}{1pt}
-\section{Internet of Things(IoT)}
-The Internet of Things is a complete form of IoT. It is used to connect, control and manage systems connected to the Internet. The Internet is a network of devices of all shapes and sizes, not just a computer network. These are toys, cameras, home appliances, etc. It can allow things to be connected to anything using any path or service.\\
-IoT consists of four architectural layers:
+\section{Radio Frequency Identification(RFID)}
+\par RFID (radio frequency identification) is a form of wireless communication that incorporates the use of electromagnetic or electrostatic coupling in the radio frequency portion of the electromagnetic spectrum to uniquely identify an object.
+\par Every RFID system consists of three components: a scanning antenna, a transceiver and a transponder. When the scanning antenna and transceiver are combined, they are referred to as an RFID reader or interrogator. There are two types of RFID readers -- fixed readers and mobile readers. The RFID reader is a network-connected device that can be portable or permanently attached. It uses radio waves to transmit signals that activate the tag. Once activated, the tag sends a wave back to the antenna, where it is translated into data.
+\par The transponder is in the RFID tag itself. The read range for RFID tags varies based on factors including the type of tag, type of reader, RFID frequency and interference in the surrounding environment or from other RFID tags and readers. Tags that have a stronger power source also have a longer read range.
+\par RFID tags are made up of an integrated circuit (IC), an antenna and a substrate. The part of an RFID tag that encodes identifying information is called the RFID inlay.
+\\
+There are two main types of RFID tags:
 \begin{itemize}
-    \item Things
-    \item Gateway
-    \item Internet
-    \item Services
+    \item Active RFID : An active RFID tag has its own power source, often a battery.
+    \item Passive RFID : A passive RFID tag receives its power from the reading antenna, whose electromagnetic wave induces a current in the RFID tag's antenna.
 \end{itemize}
 
-\section{IoT-Based Smart Bin}
-A smart bin is a trash can for collecting waste. It can detect waste level using an ultrasonic sensor. Whenever the level crosses the threshold i.e. 80 \%, it is connected to the IoT based controller. The control unit is connected to a valve that connects the bottom of the basket and the outlet to the suction pump. This suction pump sucks waste from the bin until the bin is empty. When the bin is completely empty, the waste is thrown into the incinerator. The waste is therefore automatically decomposed.
-\par No one uses the bin because of the dirty surroundings of the bin and reluctance to touch the lid of the bin. So this project develops automatic door opening using ultrasonic sensor and servo motor.
-\section{Waste Classification using Machine Learning}
+\section{RFID Based Surveillance System}
+A school bus system is one of the most important transportation methods for
+students all over the world. But the potential safety risks associated with them
+often go overlooked.
+\par A school bus security system should be able to;
+\begin{itemize}
+	\item Monitor the vehicle and ensure students remain safe to and from  school.
+	\item Capture the bus’s interior for comprehensive monitoring.
+	\item RFID integration to track the entry of students.
+
+\end{itemize}
+
+\section{Problem Statement}
 \par Waste can be separated between plastic and non-plastic via smart bins. Three machine learning models are utilised in this instance to classify the garbage.
 \begin{itemize}
     \item Convolution Neural Network (CNN)
